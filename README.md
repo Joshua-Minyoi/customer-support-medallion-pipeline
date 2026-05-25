@@ -126,14 +126,29 @@ tables. Three pages each answer one of the original business questions.
 The pipeline delivers a working analytics layer for support data with the
 operational properties to keep it reliable. What it produces:
 
-**Three dashboard pages**, each backed by gold tables, that answer the
-three opening questions. PDF exports live in [`dashboard/`](dashboard/).
+**Three dashboard pages**, each backed by gold tables. Page previews below;
+full-resolution PDF exports in [`dashboard/`](dashboard/).
 
-| Page                                                       | Source table          | What it answers                                                    |
-|------------------------------------------------------------|-----------------------|--------------------------------------------------------------------|
-| [Executive Overview](dashboard/01_executive_overview.pdf)  | `final_joined_table`  | Total tickets, average resolution time, CSAT, monthly trend.       |
-| [Ticket Analysis](dashboard/02_ticket_analysis.pdf)        | `final_joined_table`  | Tickets by category, priority, country. Resolution time by category. |
-| [User Engagement](dashboard/03_user_engagement.pdf)        | `user_ticket_gaps`    | Days since last contact per user. Engagement patterns.             |
+### Executive Overview
+
+Source: `final_joined_table`. Total tickets, average resolution time, CSAT,
+monthly trend. [Download PDF](dashboard/01_executive_overview.pdf).
+
+![Executive Overview](docs/images/dashboard_executive_overview.jpg)
+
+### Ticket Analysis
+
+Source: `final_joined_table`. Tickets by category, priority, country.
+Resolution time by category. [Download PDF](dashboard/02_ticket_analysis.pdf).
+
+![Ticket Analysis](docs/images/dashboard_ticket_analysis.jpg)
+
+### User Engagement
+
+Source: `user_ticket_gaps`. Days since last contact per user. Engagement
+patterns. [Download PDF](dashboard/03_user_engagement.pdf).
+
+![User Engagement](docs/images/dashboard_user_engagement.jpg)
 
 **Operational properties of the pipeline as built:**
 
@@ -206,22 +221,22 @@ customer-support-medallion-pipeline/
 
 ## Scope and limitations
 
-The source dataset is 50 users and 40 tickets, sized to make the
-architecture easy to follow end to end. The transformations, Unity Catalog
-lineage, orchestration, and monitoring are real and run as shown. A
-production build on a larger dataset would add incremental processing with
-watermarks, schema-evolution handling, environment promotion from dev to
-prod, automated data quality checks, and CI on the notebooks.
+The source dataset is 50 users and 40 tickets. The architecture,
+transformations, Unity Catalog lineage, orchestration, and monitoring
+are production patterns and run as shown. The same pattern scales to
+larger data with incremental processing, watermarks, schema-evolution
+handling, dev-to-prod promotion, data quality checks, and CI on the
+notebooks.
 
 ## Author
 
-Joshua Minyoi. Data and Operations professional based in Lusaka, Zambia.
+Joshua Minyoi. Data Analyst and Associate Data Engineer. Lusaka, Zambia (GMT+2 / CAT)
 
 GitHub: [@Joshua-Minyoi](https://github.com/Joshua-Minyoi)
 
 ## Acknowledgements
 
-Alex The Analyst, Analyst Builder Databricks course.
+Alex Freberg, Founder of [Analyst Builder](https://www.analystbuilder.com/).
 
 ## License
 
